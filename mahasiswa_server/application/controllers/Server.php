@@ -43,7 +43,7 @@ class Server extends CI_Controller {
 
 		}else {
 			$response['pesan'] = 'data belum ada di database';
-			$response['status'] = 0;
+			$response['status'] = 1;
 		}
 
 		echo json_encode($response);
