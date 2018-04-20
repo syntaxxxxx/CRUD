@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mahasiswa</string>
+    <string name="action_settings">Settings</string>
+    <string name="nim">160598199812</string>
+    <string name="jur">Programming</string>
+    <string name="nama">Fiqri Hafzain Islami</string>
+    <string name="u">Update</string>
+    <string name="jrsn">Masukkan Jurusan</string>
+    <string name="name">Masukkan Nama</string>
+    <string name="nimm">Masukkan Nim</string>
+    <string name="d">Delete</string>
+</resources>
