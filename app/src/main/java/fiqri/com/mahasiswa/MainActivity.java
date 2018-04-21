@@ -2,8 +2,8 @@ package fiqri.com.mahasiswa;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -33,10 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_mahasiswa)
     RecyclerView rvMahasiswa;
-    //    private Button btnSimpan, btnBatal;
     private EditText edtNim, edtNama, edtJurusan;
-
-    Context c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,14 +96,14 @@ public class MainActivity extends AppCompatActivity {
         edtNama = v.findViewById(R.id.edt_nama_inputan);
         edtJurusan = v.findViewById(R.id.edt_jurusan_inputan);
 
-        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
-        alert.setView(v);
-        alert.setCancelable(false);
-        alert.setTitle("Masukan Data");
+        dialog.setView(v);
+        dialog.setCancelable(false);
+        dialog.setTitle("Masukan Data");
 
 
-        alert.setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
+        dialog.setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(final DialogInterface dialogInterface, int i) {
 
@@ -122,12 +119,11 @@ public class MainActivity extends AppCompatActivity {
                                 int status = response.body().getStatus();
 
                                 if (status == 1) {
-                                    Toast.makeText(c, msg, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                                     dialogInterface.dismiss();
-                                    recreate();
 
                                 } else {
-                                    Toast.makeText(c, msg, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                                 }
                             }
 
@@ -141,23 +137,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        alert.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+        dialog.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
             }
         });
 
-        alert.show();
+        dialog.show();
 
     }
 
 
     @Override
     public void onBackPressed() {
-//        Intent i = new Intent(Intent.ACTION_MAIN);
-//        i.addCategory(Intent.CATEGORY_HOME);
-//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(i);
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_HOME);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
     }
 }

@@ -21,7 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.UpdateDelete"></activity>
+        <activity android:name=".ui.UpdateDelete"
+            android:label="@string/update_delete"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
