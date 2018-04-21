@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (status == 1) {
                                     Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                                     dialogInterface.dismiss();
+                                    recreate();
 
                                 } else {
                                     Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
