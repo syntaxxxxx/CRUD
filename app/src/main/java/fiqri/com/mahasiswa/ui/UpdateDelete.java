@@ -68,7 +68,7 @@ public class UpdateDelete extends AppCompatActivity {
         final AlertDialog dialog = new AlertDialog.Builder(this).create();
         dialog.setTitle("Confirmation");
         dialog.setMessage("Are you sure for update this data?");
-        dialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+        dialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yess",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(final DialogInterface dialogInterface, int i) {
