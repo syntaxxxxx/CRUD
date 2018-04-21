@@ -110,10 +110,10 @@ public class MainActivity extends AppCompatActivity {
         alert.setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(final DialogInterface dialogInterface, int i) {
+
                 String nim = edtNim.getText().toString().trim();
                 String nama = edtNama.getText().toString().trim();
                 String jurusan = edtJurusan.getText().toString().trim();
-
 
                 ConfigRetrofit.service.insert(nim, nama, jurusan)
                         .enqueue(new Callback<InsertMahasiswa>() {
